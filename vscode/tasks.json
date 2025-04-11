@@ -46,7 +46,7 @@
                 "cwd": "${workspaceFolder}"
             },
             "command": "conan",
-            "args": ["install", ".", "--output-folder=conan", "--build=missing", "--profile:=clang", "-s", "build_type=Debug"],
+            "args": ["install", ".", "--output-folder=conan", "--build=missing", "--profile:build=clang", "-s", "build_type=Debug"],
             "presentation": {
                 "echo": true,
                 "reveal": "always",
