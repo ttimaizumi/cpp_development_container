@@ -7,3 +7,10 @@ ssh-keygen -t ed25519
 ````
 ## vscode
 In vscode folder see vscode files to get started on configuring tasks, launch and settings for code completion
+
+## Environment
+To use clang set environment variables
+````
+export CC=/usr/bin/clang
+export CXX=/usr/bin/clang++
+````
