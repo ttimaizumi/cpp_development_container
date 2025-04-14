@@ -1,6 +1,6 @@
 FROM fedora:latest
 
-RUN dnf install -y gcc vim clang openssh-server meson lldb conan clangd
+RUN dnf install -y gcc vim clang openssh-server meson lldb conan clangd cmake
 
 RUN sed -i 's/#Port 22/Port 22/g' /etc/ssh/sshd_config
 RUN sed -i 's/#PermitRootLogin.*/PermitRootLogin yes/g' /etc/ssh/sshd_config
