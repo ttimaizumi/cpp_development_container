@@ -1,6 +1,6 @@
 FROM fedora:latest
 
-RUN dnf install -y gcc vim clang openssh-server lldb clangd libicu python3 pip cmake perl
+RUN dnf install -y gcc vim clang openssh-server lldb clangd libicu python3 pip cmake perl gdb
 RUN pip install conan 
 RUN pip install ninja
 RUN pip install meson
@@ -22,7 +22,7 @@ RUN touch ~/.ssh/authorized_keys && chmod 600 ~/.ssh/authorized_keys
 RUN mkdir /devenv && mkdir /devenv/workspace && mkdir /devenv/workspace/service
 
 #copy public key into container for autmatic login
-COPY ~/.ssh/id_ed25519.pub /devenv
+COPY id_ed25519.pub /devenv
 
 RUN cat /devenv/id_ed25519.pub > ~/.ssh/authorized_keys
 
