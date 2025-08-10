@@ -1,6 +1,6 @@
-FROM fedora:latest
+FROM fedora:42
 
-RUN dnf install -y gcc vim clang openssh-server lldb clangd libicu python3 pip cmake perl gdb
+RUN dnf install -y gcc vim clang openssh-server lldb clangd libicu python3 pip cmake perl gdb awk
 RUN pip install conan 
 RUN pip install ninja
 RUN pip install meson
@@ -8,7 +8,7 @@ RUN pip install meson
 RUN conan profile detect
 RUN conan profile detect --name clang
 RUN sed -i 's/compiler=gcc/compiler=clang/g' /root/.conan2/profiles/clang
-RUN sed -i 's/compiler.version=14/compiler.version=19/g' /root/.conan2/profiles/clang
+RUN sed -i 's/compiler.version=.*/compiler.version=20/g' /root/.conan2/profiles/clang
 RUN echo [buildenv] >> /root/.conan2/profiles/clang
 RUN echo CC=clang >> /root/.conan2/profiles/clang
 RUN echo CXX=clang++ >> /root/.conan2/profiles/clang
