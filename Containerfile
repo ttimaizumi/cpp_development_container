@@ -2,17 +2,6 @@ FROM fedora:42
 
 RUN dnf update -y
 RUN dnf install -y ninja gcc vim gcc gcc-c++ clang openssh-server lldb clangd libicu python3 pip cmake perl gdb awk npm git bison flex autoconf
-# RUN pip install conan 
-# RUN pip install ninja
-# RUN pip install meson
-
-# RUN conan profile detect
-# RUN conan profile detect --name clang
-# RUN sed -i 's/compiler=gcc/compiler=clang/g' /root/.conan2/profiles/clang
-# RUN sed -i 's/compiler.version=.*/compiler.version=20/g' /root/.conan2/profiles/clang
-# RUN echo [buildenv] >> /root/.conan2/profiles/clang
-# RUN echo CC=clang >> /root/.conan2/profiles/clang
-# RUN echo CXX=clang++ >> /root/.conan2/profiles/clang
 
 RUN git clone --depth 1 https://github.com/microsoft/vcpkg.git /opt/vcpkg/
 RUN /opt/vcpkg/bootstrap-vcpkg.sh
