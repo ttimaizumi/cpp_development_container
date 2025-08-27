@@ -25,3 +25,12 @@ type $env:USERPROFILE\.ssh\id_ed25519.pub | ssh localhost -p20202 "cat >> .ssh/a
 ssh-keygen
 #If keys are already generated, no need to replace them
 ssh-copy-id -i ~/.ssh/id_ed25519.pub -p 20202 developer@localhost
+
+#### Update/add containers.conf
+In Fedora WSL, to get network working
+````
+sudo dnf install -y iptables
+Update  /etc/containers/containers.conf with
+
+[network]
+firewall_driver="iptables"
