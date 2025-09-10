@@ -1,7 +1,7 @@
 FROM fedora:42
 
 # RUN dnf update -y
-RUN dnf install -y ninja gcc vim gcc gcc-c++ clang openssh-server lldb clangd libicu python3 pip cmake perl gdb awk npm git bison flex autoconf openssl libtool
+RUN dnf install -y ninja gcc vim gcc gcc-c++ clang openssh-server lldb clangd libicu python3 pip cmake perl gdb awk npm git bison flex autoconf openssl libtool automake
 
 RUN echo 'developer        ALL=(ALL)       NOPASSWD: ALL' >> /etc/sudoers
 RUN echo 'PasswordAuthentication yes' >> /etc/ssh/ssh_config
