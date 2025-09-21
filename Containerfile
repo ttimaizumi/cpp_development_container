@@ -17,7 +17,7 @@ RUN echo "-k" >> ~/.curlrc
 RUN /opt/vcpkg/bootstrap-vcpkg.sh
 
 RUN echo 'export PATH=/opt/vcpkg/:$PATH' >> ~/.bashrc
-
+RUN source /root/.bashrc
 
 EXPOSE 22 8080
 
