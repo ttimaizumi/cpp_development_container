@@ -17,6 +17,7 @@ RUN echo "-k" >> ~/.curlrc
 RUN /opt/vcpkg/bootstrap-vcpkg.sh
 
 RUN echo 'export PATH=/opt/vcpkg/:$PATH' >> ~/.bashrc
+RUN echo 'export VCPKG_BINARY_SOURCES="clear;files,/opt/vcpkg/binary-cache,readwrite"'
 RUN source /root/.bashrc
 
 EXPOSE 22 8080
